@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="hero text-center">
+  <h2>Cadastro</h2>
+</div>
+
+<div class="container mt-4">
+
+<div class="card card-custom p-4">
+
+<h4 class="title">Cadastro de Usuário</h4>
+
+<form id="formCadastro">
+
+<input id="nome" class="form-control mb-2" placeholder="Nome completo">
+<input id="nomeMae" class="form-control mb-2" placeholder="Nome da mãe completo">
+<input id="nascimento" type="date" class="form-control mb-2">
+<input id="sexo" class="form-control mb-2" placeholder="Sexo">
+<input id="cpf" class="form-control mb-2" placeholder="CPF">
+<input id="celular" class="form-control mb-2" placeholder="+5521-999999999">
+<input id="fixo" class="form-control mb-2" placeholder="+5521-222222222">
+<input id="endereco" class="form-control mb-2" placeholder="Endereço">
+<input id="login" class="form-control mb-2" placeholder="Login (6 letras)">
+<input id="senha" type="password" class="form-control mb-2" placeholder="Senha (8 letras)">
+<input id="confirmar" type="password" class="form-control mb-3" placeholder="Confirmar senha">
+
+<button class="btn btn-primary-custom w-100">Cadastrar</button>
+
+<div id="msg" class="text-danger text-center mt-2"></div>
+
+</form>
+
+</div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
