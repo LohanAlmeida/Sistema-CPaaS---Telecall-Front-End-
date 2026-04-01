@@ -2,7 +2,6 @@
   --azul-principal: #1643b3;
   --azul-secundario: #032c54;
   --azul-neon: #0d90ad;
-  --azul-escuro: #0a0f2c;
   --vermelho: #a4070c;
   --cinza-bg: #d2d7de;
   --branco: #ffffff;
@@ -19,12 +18,10 @@ body {
 /* NAVBAR */
 .navbar-custom {
   background: linear-gradient(90deg, var(--vermelho), #7d0206);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
 .navbar-brand {
   font-weight: 700;
-  letter-spacing: 1px;
   color: rgb(235, 226, 226);
 }
 
@@ -33,125 +30,59 @@ body {
   background: linear-gradient(90deg, #172d74, #040a2d);
   color: rgb(235, 226, 226);
   padding: 60px 20px;
-  border-radius: 0; /* remove arredondado */
-  box-shadow: none;
-  border-bottom: 1px solid rgba(255,255,255,0.08); /* linha elegante */
 }
 
-/* TIPOGRAFIA */
-.hero h2 {
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.hero p {
-  opacity: 0.7;
-  font-size: 14px;
-}
 /* CARDS */
 .card-custom {
-  border: none;
   border-radius: 18px;
   background: var(--branco);
-  box-shadow: 
-    0 10px 25px rgba(0,0,0,0.08),
-    0 2px 5px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   position: relative;
-  overflow: hidden;
 }
 
-/* LINHA DE DESTAQUE */
 .card-custom::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
   height: 4px;
   width: 100%;
   background: linear-gradient(90deg, var(--azul-secundario), var(--azul-neon));
 }
 
-.card-custom:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 
-    0 15px 35px rgba(0,0,0,0.12),
-    0 5px 10px rgba(0,0,0,0.08);
-}
-
-/* BOTÃO PRINCIPAL */
+/* BOTÃO */
 .btn-primary-custom {
   background: linear-gradient(45deg, var(--azul-secundario), var(--azul-neon));
-  border: none;
-  color: var(--branco);
-  font-weight: 600;
+  color: white;
   border-radius: 12px;
-  padding: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(3, 209, 255, 0.3);
-}
-
-.btn-primary-custom:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 207, 255, 0.5);
-}
-
-/* BOTÃO OUTLINE */
-.btn-outline-custom {
-  border: 2px solid var(--azul-secundario);
-  color: var(--azul-secundario);
-  border-radius: 12px;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.btn-outline-custom:hover {
-  background: var(--azul-secundario);
-  color: var(--branco);
-  box-shadow: 0 4px 12px rgba(30,144,255,0.4);
-}
-
-/* INPUTS */
-input.form-control {
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  transition: 0.2s;
-}
-
-input.form-control:focus {
-  border-color: var(--azul-secundario);
-  box-shadow: 0 0 0 2px rgba(30,144,255,0.2);
-}
-
-/* TÍTULOS */
-.title {
-  font-weight: 700;
-  color: var(--azul-principal);
-}
-
-/* TEXTO SECUNDÁRIO */
-p {
-  color: var(--cinza-texto);
 }
 
 /* DARK MODE */
 .dark-mode {
-  background: #0d1117;
+  background: #010a17;
   color: #e6edf3;
 }
 
 .dark-mode .card-custom {
   background: #161b22;
-  color: #e6edf3;
 }
 
-/* ACESSIBILIDADE */
-.big-text {
-  font-size: 20px;
+/*  FONTE (6 níveis) */
+.font-small { font-size: 14px; }
+.font-normal { font-size: 16px; }
+.font-big { font-size: 18px; }
+.font-bigger { font-size: 20px; }
+.font-large { font-size: 22px; }
+.font-xlarge { font-size: 24px; }
+
+/*  ÍCONES  */
+i.bi {
+  color: var(--azul-secundario) !important;
 }
 
-/* TRANSIÇÕES */
-* {
-  transition: background 0.3s, color 0.3s;
+.dark-mode i.bi {
+  color: #79c0ff !important;
+}
+
+.list-group-item:hover i.bi {
+  color: var(--azul-neon) !important;
 }
