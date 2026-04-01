@@ -1,61 +1,54 @@
-function mostrarMsg(msg, tipo = "erro") {
-  let el = document.getElementById("msg");
-  el.className = "text-center mt-2 " + (tipo === "erro" ? "text-danger" : "text-success");
-  el.innerText = msg;
+window.onload = () => {
+  // DARK MODE
+  if (localStorage.getItem("dark") === "on") {
+    document.body.classList.add("dark-mode");
+  }
+
+  // FONTE
+  let nivel = localStorage.getItem("fonte") || "font-normal";
+  document.body.classList.add(nivel);
+};
+
+// DARK MODE
+function toggleDark() {
+  document.body.classList.toggle("dark-mode");
+  localStorage.setItem("dark", document.body.classList.contains("dark-mode") ? "on" : "off");
 }
 
-// CADASTRO
-let form = document.getElementById("formCadastro");
+// FONTE
+const niveis = [
+  "font-small",
+  "font-normal",
+  "font-big",
+  "font-bigger",
+  "font-large",
+  "font-xlarge"
+];
 
-if (form) {
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+function getNivelAtual() {
+  return niveis.findIndex(n => document.body.classList.contains(n));
+}
 
-    let nome = document.getElementById("nome").value;
-    let nomeMae = document.getElementById("nomeMae").value;
-    let nascimento = document.getElementById("nascimento").value;
-    let sexo = document.getElementById("sexo").value;
-    let cpf = document.getElementById("cpf").value;
-    let celular = document.getElementById("celular").value;
-    let fixo = document.getElementById("fixo").value;
-    let endereco = document.getElementById("endereco").value;
-    let login = document.getElementById("login").value;
-    let senha = document.getElementById("senha").value;
-    let confirmar = document.getElementById("confirmar").value;
+function limparFonte() {
+  niveis.forEach(n => document.body.classList.remove(n));
+}
 
-    if (!nome || nome.length < 15 || nome.length > 60)
-      return mostrarMsg("Nome deve ter entre 15 e 60 caracteres");
+function aumentarFonte() {
+  let atual = getNivelAtual();
+  if (atual < niveis.length - 1) {
+    limparFonte();
+    document.body.classList.add(niveis[atual + 1]);
+    localStorage.setItem("fonte", niveis[atual + 1]);
+  }
+}
 
-    if (!nomeMae) return mostrarMsg("Nome da mãe obrigatório");
-    if (!nascimento) return mostrarMsg("Data de nascimento obrigatória");
-    if (!sexo) return mostrarMsg("Sexo obrigatório");
-
-    if (!cpf.match(/^\d{11}$/))
-      return mostrarMsg("CPF deve ter 11 números");
-
-    if (!celular.match(/^\+55\d{2}-\d{9}$/))
-      return mostrarMsg("Celular inválido");
-
-    if (!fixo.match(/^\+55\d{2}-\d{8}$/))
-      return mostrarMsg("Telefone fixo inválido");
-
-    if (!endereco) return mostrarMsg("Endereço obrigatório");
-
-    if (!login.match(/^[A-Za-z]{6}$/))
-      return mostrarMsg("Login deve ter 6 letras");
-
-    if (!senha.match(/^[A-Za-z]{8}$/))
-      return mostrarMsg("Senha deve ter 8 letras");
-
-    if (senha !== confirmar)
-      return mostrarMsg("Senhas diferentes");
-
-    localStorage.setItem("user", JSON.stringify({ login, senha }));
-
-    mostrarMsg("Cadastro realizado com sucesso!", "ok");
-
-    setTimeout(() => window.location = "index.html", 1500);
-  });
+function diminuirFonte() {
+  let atual = getNivelAtual();
+  if (atual > 0) {
+    limparFonte();
+    document.body.classList.add(niveis[atual - 1]);
+    localStorage.setItem("fonte", niveis[atual - 1]);
+  }
 }
 
 // LOGIN
@@ -66,7 +59,7 @@ function login() {
   let user = JSON.parse(localStorage.getItem("user"));
 
   if (!user || user.login !== login || user.senha !== senha)
-    return mostrarMsg("Login inválido");
+    return alert("Login inválido");
 
   localStorage.setItem("logado", login);
   window.location = "home.html";
@@ -75,13 +68,12 @@ function login() {
 // LOGOUT
 function logout() {
   localStorage.removeItem("logado");
-  window.location.href = "index.html";
+  window.location = "index.html";
 }
 
 // PROTEÇÃO
 if (window.location.pathname.includes("home") || window.location.pathname.includes("interna")) {
   let user = localStorage.getItem("logado");
-
   if (!user) window.location = "index.html";
 
   let el = document.getElementById("usuario");
@@ -93,7 +85,7 @@ function ir(s) {
   window.location = "interna.html?servico=" + s;
 }
 
-// INTERNA (SUBMENU)
+// INTERNA
 if (window.location.pathname.includes("interna")) {
   let s = new URLSearchParams(window.location.search).get("servico");
 
@@ -111,17 +103,4 @@ if (window.location.pathname.includes("interna")) {
     t.innerText = dados[s][0];
     c.innerText = dados[s][1];
   }
-}
-
-// ACESSIBILIDADE
-function toggleDark() {
-  document.body.classList.toggle("dark-mode");
-}
-
-function aumentarFonte() {
-  document.body.classList.add("big-text");
-}
-
-function diminuirFonte() {
-  document.body.classList.remove("big-text");
 }
