@@ -1,9 +1,9 @@
 :root {
   --azul-principal: #1643b3;
-  --azul-secundario: #1e90ff;
-  --azul-neon: #00cfff;
+  --azul-secundario: #032c54;
+  --azul-neon: #0d90ad;
   --azul-escuro: #0a0f2c;
-  --vermelho: #ce0e14;
+  --vermelho: #a4070c;
   --cinza-bg: #d2d7de;
   --branco: #ffffff;
   --cinza-texto: #6c757d;
@@ -18,20 +18,20 @@ body {
 
 /* NAVBAR */
 .navbar-custom {
-  background: linear-gradient(90deg, var(--vermelho), #a80c11);
+  background: linear-gradient(90deg, var(--vermelho), #7d0206);
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
 }
 
 .navbar-brand {
   font-weight: 700;
   letter-spacing: 1px;
-  color: var(--branco) !important;
+  color: rgb(235, 226, 226);
 }
 
 /* HERO */
 .hero {
-  background: linear-gradient(90deg, #0f1f4d, #0a0f2c);
-  color: white;
+  background: linear-gradient(90deg, #172d74, #040a2d);
+  color: rgb(235, 226, 226);
   padding: 60px 20px;
   border-radius: 0; /* remove arredondado */
   box-shadow: none;
@@ -89,7 +89,7 @@ body {
   border-radius: 12px;
   padding: 10px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 207, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(3, 209, 255, 0.3);
 }
 
 .btn-primary-custom:hover {
@@ -137,7 +137,7 @@ p {
 
 /* DARK MODE */
 .dark-mode {
-  background: #0d1117 !important;
+  background: #0d1117;
   color: #e6edf3;
 }
 
