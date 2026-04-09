@@ -8,119 +8,134 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar navbar-custom px-3">
-  <span class="navbar-brand">Telecall CPaaS</span>
+<span class="navbar-brand">Telecall CPaaS</span>
 
-  <div>
-    <button class="btn btn-light btn-sm me-2" onclick="toggleDark()">🌙</button>
-    <button class="btn btn-light btn-sm me-2" onclick="aumentarFonte()">A+</button>
-    <button class="btn btn-light btn-sm me-2" onclick="diminuirFonte()">A-</button>
+<div>
+<button class="btn btn-light btn-sm me-2" onclick="toggleDark()">🌙</button>
+<button class="btn btn-light btn-sm me-2" onclick="aumentarFonte()">A+</button>
+<button class="btn btn-light btn-sm me-2" onclick="diminuirFonte()">A-</button>
 
-    <span id="usuario" class="text-white fw-bold"></span>
+<span id="usuario" class="text-white fw-bold"></span>
 
-    <button class="btn btn-outline-light btn-sm ms-2" onclick="logout()">⏻ Sair</button>
-  </div>
+<button class="btn btn-outline-light btn-sm ms-2" onclick="logout()">⏻ Sair</button>
+</div>
 </nav>
 
-<!-- HERO -->
 <div class="hero text-center">
   <h2 id="titulo"></h2>
   <p>Detalhes do serviço selecionado</p>
+</div>
 
+<div class="container mt-4">
+<div class="row">
+
+<!-- MENU -->
+<div class="col-md-3">
+<div class="card card-custom p-3">
+
+<h5 class="mb-3">Serviços</h5>
+
+<button class="btn btn-light mb-2" onclick="ir('2fa')">2FA</button>
+<button class="btn btn-light mb-2" onclick="ir('numero')">Número Máscara</button>
+<button class="btn btn-light mb-2" onclick="ir('google')">Google Verify</button>
+<button class="btn btn-light mb-2" onclick="ir('sms')">SMS</button>
+
+<hr>
+
+<!-- BOTÃO VOLTAR -->
+<button onclick="window.location='home.html'" class="btn-voltar w-100">
+  <i class="bi bi-arrow-left"></i> Voltar ao Dashboard
+</button>
+
+</div>
 </div>
 
 <!-- CONTEÚDO -->
-<div class="container mt-4">
+<div class="col-md-9">
+<div class="card card-custom p-4">
 
-  <div class="row g-4">
+<h4>Descrição</h4>
+<p id="conteudo"></p>
 
-    <!-- MENU LATERAL (SUBMENU) -->
-    <div class="col-md-3">
-      <div class="card card-custom p-3">
-        <h5 class="title mb-3">Serviços</h5>
+<hr>
 
-        <div class="list-group">
-          <button class="list-group-item list-group-item-action" onclick="ir('2fa')"><h5><i class="bi bi-shield-lock"></i> 2FA</h5></button>
-          <button class="list-group-item list-group-item-action" onclick="ir('numero')"><h5><i class="bi bi-phone"></i> Número Máscara</h5></button>
-          <button class="list-group-item list-group-item-action" onclick="ir('google')"><h5><i class="bi bi-patch-check"></i> Google Verify</h5></button>
-          <button class="list-group-item list-group-item-action" onclick="ir('sms')"><h5><i class="bi bi-chat-dots"></i> SMS</h5></button>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTEÚDO PRINCIPAL -->
-    <div class="col-md-9">
-
-      <div class="card card-custom p-4">
-
-        <h4 class="title mb-3">Descrição</h4>
-        <p id="conteudo"></p>
-
-        <hr>
-
-        <h5 class="title">Benefícios</h5>
-        <ul id="beneficios">
-          <li>Alta disponibilidade</li>
-          <li>Segurança avançada</li>
-          <li>Escalabilidade</li>
-        </ul>
-
-        <hr>
-
-        <button onclick="window.location='home.html'" class="btn btn-primary-custom">
-          ← Voltar
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
+<h5>Benefícios</h5>
+<ul id="beneficios"></ul>
 
 </div>
+</div>
 
-<footer class="footer-custom">
-  <div class="container">
-    <div class="row">
+</div>
+</div>
 
-      <!-- LOGO / SOBRE -->
-      <div class="col-md-4 mb-3">
+<footer class="footer-custom mt-5">
+
+  <div class="container py-4">
+    <div class="row gy-4">
+
+      <!-- SOBRE -->
+      <div class="col-md-4">
         <h5 class="footer-title">Telecall CPaaS</h5>
-        <p style="font-size: 14px;">
-          Soluções inteligentes em comunicação, segurança e automação para empresas modernas.
+        <p class="footer-text">
+          Plataforma completa de comunicação em nuvem, oferecendo soluções
+          modernas para autenticação, mensageria e segurança digital.
         </p>
+
+        <!-- REDES -->
+        <div class="footer-social">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-linkedin"></i>
+          <i class="bi bi-instagram"></i>
+        </div>
       </div>
 
       <!-- LINKS -->
-      <div class="col-md-4 mb-3">
-        <h5 class="footer-title">Links</h5>
-        <a href="home.html" class="footer-link">Início</a>
-        <a href="cadastro.html" class="footer-link">Cadastro</a>
-        <a href="#" class="footer-link">Suporte</a>
+      <div class="col-md-4">
+        <h5 class="footer-title">Navegação</h5>
+
+        <ul class="footer-list">
+          <li><a href="home.html">Início</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Suporte</a></li>
+        </ul>
       </div>
 
       <!-- CONTATO -->
-      <div class="col-md-4 mb-3">
+      <div class="col-md-4">
         <h5 class="footer-title">Contato</h5>
-        <p><i class="bi bi-envelope footer-icon"></i> suporte@telecall.com</p>
-        <p><i class="bi bi-telephone footer-icon"></i> (21) 99999-9999</p>
+
+        <p class="footer-info">
+          <i class="bi bi-envelope"></i> suporte@telecall.com
+        </p>
+
+        <p class="footer-info">
+          <i class="bi bi-telephone"></i> (21) 99999-9999
+        </p>
+
+        <p class="footer-info">
+          <i class="bi bi-geo-alt"></i> Rio de Janeiro - RJ
+        </p>
       </div>
 
     </div>
 
-    <hr style="border-color: rgba(255,255,255,0.1);">
+    <!-- DIVISOR -->
+    <hr class="footer-divider">
 
-    <div class="text-center" style="font-size: 14px;">
+    <!-- COPYRIGHT -->
+    <div class="text-center footer-copy">
       © 2026 Telecall CPaaS — Todos os direitos reservados
     </div>
+
   </div>
 </footer>
+
 <script src="js/app.js"></script>
 </body>
 </html>
