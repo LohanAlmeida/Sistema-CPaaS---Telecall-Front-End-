@@ -4,39 +4,43 @@
 <meta charset="UTF-8">
 <title>Cadastro</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 
 <body>
 
 <div class="hero text-center">
-  <h2>Cadastro</h2>
+  <h2>Cadastro de Usuário</h2>
+  <p>Crie sua conta para acessar o sistema</p>
 </div>
 
 <div class="container mt-4">
-
 <div class="card card-custom p-4">
 
-<h4 class="title">Cadastro de Usuário</h4>
+<h4>Cadastro</h4>
 
 <form id="formCadastro">
 
 <input id="nome" class="form-control mb-2" placeholder="Nome completo">
+
+<!-- CAMPOS ADICIONADOS (SEM ALTERAR SEU PADRÃO) -->
 <input id="nomeMae" class="form-control mb-2" placeholder="Nome da mãe completo">
-<input id="nascimento" type="date" class="form-control mb-2">
+<input id="nascimento" class="form-control mb-2" placeholder="Data de nascimento">
 <input id="sexo" class="form-control mb-2" placeholder="Sexo">
 <input id="cpf" class="form-control mb-2" placeholder="CPF">
-<input id="celular" class="form-control mb-2" placeholder="+5521-999999999">
-<input id="fixo" class="form-control mb-2" placeholder="+5521-222222222">
+<input id="celular" class="form-control mb-2" placeholder="Telefone celular">
+<input id="fixo" class="form-control mb-2" placeholder="Telefone fixo">
 <input id="endereco" class="form-control mb-2" placeholder="Endereço">
-<input id="login" class="form-control mb-2" placeholder="Login (6 letras)">
-<input id="senha" type="password" class="form-control mb-2" placeholder="Senha (8 letras)">
+
+<!-- SEUS CAMPOS ORIGINAIS -->
+<input id="login" class="form-control mb-2" placeholder="Login (mín. 6)">
+<input id="senha" type="password" class="form-control mb-2" placeholder="Senha (mín. 8)">
 <input id="confirmar" type="password" class="form-control mb-3" placeholder="Confirmar senha">
 
 <button type="submit" class="btn btn-primary-custom w-100">Cadastrar</button>
-
 
 <div id="msg" class="text-danger text-center mt-2"></div>
 
@@ -45,42 +49,63 @@
 </div>
 </div>
 
-<footer class="footer-custom">
-  <div class="container">
-    <div class="row">
+<footer class="footer-custom mt-5">
 
-      <!-- LOGO / SOBRE -->
-      <div class="col-md-4 mb-3">
+  <div class="container py-4">
+    <div class="row gy-4">
+
+      <div class="col-md-4">
         <h5 class="footer-title">Telecall CPaaS</h5>
-        <p style="font-size: 14px;">
-          Soluções inteligentes em comunicação, segurança e automação para empresas modernas.
+        <p class="footer-text">
+          Plataforma completa de comunicação em nuvem, oferecendo soluções
+          modernas para autenticação, mensageria e segurança digital.
+        </p>
+
+        <div class="footer-social">
+          <i class="bi bi-facebook"></i>
+          <i class="bi bi-linkedin"></i>
+          <i class="bi bi-instagram"></i>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="footer-title">Navegação</h5>
+
+        <ul class="footer-list">
+          <li><a href="home.html">Início</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Suporte</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h5 class="footer-title">Contato</h5>
+
+        <p class="footer-info">
+          <i class="bi bi-envelope"></i> suporte@telecall.com
+        </p>
+
+        <p class="footer-info">
+          <i class="bi bi-telephone"></i> (21) 99999-9999
+        </p>
+
+        <p class="footer-info">
+          <i class="bi bi-geo-alt"></i> Rio de Janeiro - RJ
         </p>
       </div>
 
-      <!-- LINKS -->
-      <div class="col-md-4 mb-3">
-        <h5 class="footer-title">Links</h5>
-        <a href="home.html" class="footer-link">Início</a>
-        <a href="cadastro.html" class="footer-link">Cadastro</a>
-        <a href="#" class="footer-link">Suporte</a>
-      </div>
-
-      <!-- CONTATO -->
-      <div class="col-md-4 mb-3">
-        <h5 class="footer-title">Contato</h5>
-        <p><i class="bi bi-envelope footer-icon"></i> suporte@telecall.com</p>
-        <p><i class="bi bi-telephone footer-icon"></i> (21) 99999-9999</p>
-      </div>
-
     </div>
 
-    <hr style="border-color: rgba(255,255,255,0.1);">
+    <hr class="footer-divider">
 
-    <div class="text-center" style="font-size: 14px;">
+    <div class="text-center footer-copy">
       © 2026 Telecall CPaaS — Todos os direitos reservados
     </div>
+
   </div>
 </footer>
+
 <script src="js/app.js"></script>
 </body>
 </html>
