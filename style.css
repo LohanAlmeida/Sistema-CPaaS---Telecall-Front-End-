@@ -30,10 +30,12 @@ body {
 
 /* HERO */
 .hero {
-  background: linear-gradient(90deg, #172d74, #040a2d);
-  color: rgba(232, 227, 227, 0.913);
-  padding: 60px 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(rgba(62, 53, 98, 0.85), rgba(0, 15, 29, 0.95)),
+              url("https://t3.ftcdn.net/jpg/07/44/71/38/360_F_744713831_buGgwrmM9nslbSLZyIAZMdhf2cfpuGYH.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 20px;
 }
 
 /* CARDS */
@@ -73,16 +75,41 @@ body {
   padding: 10px;
 }
 
+/* BOTÃO VOLTAR */
+.btn-voltar {
+  background: linear-gradient(45deg, #032c54, #0d90ad);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.btn-voltar:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  background: linear-gradient(45deg, #0d90ad, #032c54);
+}
+
+.btn-voltar i {
+  font-size: 18px;
+}
 
 /* DARK MODE */
 .dark-mode {
-  background: #01011c;
+  background: #000027;
   color: #d7dbdf;
 }
 
 .dark-mode .card-custom {
-  background: #7a7e82;
+  background: #babec2;
 }
 
 /*  ACESSIBILIDADE NÍVEIS  */
@@ -95,41 +122,96 @@ body {
 
 /*  FOOTER  */
 .footer-custom {
-  background: linear-gradient(90deg, #040a2d, #0a0f2c);
-  color: #d7dbdf;
-  padding: 10px 0;
-  margin-top: 60px;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  background: linear-gradient(rgb(0, 0, 34), rgba(56, 56, 68, 0.95)),
+              url("https://t3.ftcdn.net/jpg/15/40/23/26/360_F_1540232697_sMxDxNIJOr1LRCi3d7ndhNZa5BbV7ZEh.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #cfd6e1;
+  border-top: 1px solid rgba(5, 1, 58, 0.217);
+  overflow: hidden;
 }
 
+.footer-custom .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* TÍTULOS */
 .footer-title {
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-weight: 700;
+  margin-bottom: 12px;
   color: #ffffff;
 }
 
-.footer-link {
-  display: block;
+/* TEXTO */
+.footer-text {
+  font-size: 14px;
+  line-height: 1.6;
   color: #9aa4b2;
+}
+
+/* LISTA */
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list li {
+  margin-bottom: 8px;
+}
+
+.footer-list a {
   text-decoration: none;
-  margin-bottom: 5px;
-  transition: 0.2s;
+  color: #9aa4b2;
+  transition: 0.3s;
 }
 
-.footer-link:hover {
-  color: var(--azul-neon);
+.footer-list a:hover {
+  color: #0d90ad;
+  padding-left: 5px;
 }
 
-.footer-icon {
-  font-size: 18px;
+/* CONTATO */
+.footer-info {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.footer-info i {
   margin-right: 8px;
+  color: #0d90ad;
 }
 
-/* DARK MODE */
-.dark-mode .footer-custom {
-  background: #01011c;
-  color: #c9d1d9;
+/* REDES SOCIAIS */
+.footer-social {
+  margin-top: 10px;
 }
+
+.footer-social i {
+  font-size: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-social i:hover {
+  color: #0d90ad;
+  transform: scale(1.2);
+}
+
+/* DIVISOR */
+.footer-divider {
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* COPYRIGHT */
+.footer-copy {
+  font-size: 13px;
+  color: #8b949e;
+}
+
+
 
 /* TRANSIÇÕES */
 * {
