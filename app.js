@@ -4,12 +4,16 @@
 
 window.onload = () => {
 
+  // ============================
   // DARK MODE
+  // ============================
   if (localStorage.getItem("dark") === "on") {
     document.body.classList.add("dark-mode");
   }
 
+  // ============================
   // FONTE
+  // ============================
   let nivel = localStorage.getItem("fonte") || "font-normal";
   document.body.classList.add(nivel);
 
